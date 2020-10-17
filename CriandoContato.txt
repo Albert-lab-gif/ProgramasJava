@@ -1,0 +1,30 @@
+describe "Criar", type: :feature do
+             it "Contato" do
+
+         visit('https://www.verity.com.br/')
+
+         click_on('button_contato')
+
+         within("#session") do
+
+         fill_in('Nome Completo', with: 'Albert Luthanny Correia de Farias')
+
+         fill_in('Empresa', with:'Analista S/A')
+ 
+         fill_in('Email', with:'alcf.1978@gmail.com')
+        
+         fill_in('Fone', with:'994785123')
+
+         fill_in('Mensangem', with:'Gostaria de Informação dos Produtos Digitais')
+
+         click_on('button_Enviar')
+
+         end
+
+         expect(page).to have_content 'Mensagem foi Enviada com Sucesso.'
+
+         page.save_screenshot('screenshot.png')
+
+       end
+
+   end
